@@ -1,0 +1,62 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap");
+
+.listaFilmes {
+  grid-area: filmes;
+  margin-top: 40px;
+}
+
+.listaFilmes h1 {
+  font-family: Manrope;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 150%;
+  color: #fdfdfd;
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+  margin: 16px 0px;
+  text-align: left;
+}
+
+.listaCards {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.containerBotoes {
+  margin-bottom: 24px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.containerBotoes button {
+  all: unset;
+  font-family: "Open Sans", sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 22px;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.2);
+  cursor: pointer;
+  width: calc(100% / 5 - 16px);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  padding: 8px 0;
+}
+
+.containerBotoes button:hover {
+  color: #e183c8;
+  border-color: #e183c8;
+}
+
+.containerBotoes button.selecionado {
+  color: #e183c8;
+  border-color: #e183c8;
+  background-color: rgba(225, 131, 200, 0.2);
+}

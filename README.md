@@ -1,43 +1,70 @@
-![](https://i.imgur.com/xG74tOh.png)
+# Getting Started with Create React App
 
-# Desafio | Front-end - Módulo 2
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-O objetivo deste exercício é replicar [essa página](https://desafio-2-front-cubos-academy.netlify.app), encontrada no arquivo 'Desafio front academy 2.fig'.
+## Available Scripts
 
-## Funcionalidades obrigatórias
-- **Header**
-  - **Input de busca**
-    - Ao clicar na lupa ou aperta a tecla `Enter` deverá filtrar os filmes por **nome**
-- **Seção de Top Filmes**
-  - A seção de Top Filmes deve exibir os 5 primeiros filmes da lista encontrada no arquivo 'data.js'
-- **Seção de Filmes**
-  - A seção de Filmes deve exibir todos os filmes da lista encontrada no arquivo 'data.js'
-  - Ao clicar em uma categoria (ex: Ação, Romance, etc), apenas filmes dessa categoria devem ser exibidos na seção filmes (a seção de "Top Filmes" deve permanecer como está)
-- **Banner de cupom de desconto**
-  - Caso clicado, o cupom de desconto deve ser aplicado e o banner deve desaparecer
-- **Sacola**
-  - Adição/remoção de filmes
-  - Deverá exibir o total da soma de todos os filmes adicionados
-  - Ao clicar no botão de "sacola" dentro de um filme, esse filme deve ser adicionado à sacola
-      - Caso ele não esteja na sacola, adicione-o com quantidade 1
-      - Caso ele esteja na sacola, aumente a quantidade em 1
-  - Caso o input de cupom de desconto esteja preenchido com o valor `htmlnaoelinguagem` e o usuário aperte a tecla `Enter`, um desconto de 10% deve ser aplicado no total da compra
+In the project directory, you can run:
 
-## Funcionalidades não obrigatórias
-- **Conceitos**
-  - Não usar estado quando uma variável bastaria
-  - Componentização e organização de código
-  - Limpar efeitos (só é aplicável ao do `setInterval`)
-- **Responsividade**
-- **Banner de cupom de desconto**
-  - O banner do cupom de desconto deve exibir uma contagem regressiva de 5 minutos a partir do momento em que a página abre
-  - No fim do período de 5 minutos, o banner deve desaparecer
-- **Sacola**
-  - O desconto somente deve ser aplicado se o banner ainda estiver visível, seja por quê o usuário não clicou no banner ou pelo tempo de 5 minutos ainda não ter passado
-  - Persistir o valor total e os itens adicionados no `localStorage`
+### `npm start`
 
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-**LEMBRE-SE**: é melhor feito do quê perfeito!!!
+The page will reload if you make edits.\
+You will also see any lint errors in the console.
 
+### `npm test`
 
-###### tags: `front-end` `módulo 2` `React` `CSS` `desafio`
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+
+### `npm run build`
+
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
+
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
+
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+
+### `npm run eject`
+
+**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+
+If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+
+You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+
+## Learn More
+
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+
+To learn React, check out the [React documentation](https://reactjs.org/).
+
+### Code Splitting
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+
+### Analyzing the Bundle Size
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+
+### Making a Progressive Web App
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+
+### Advanced Configuration
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+
+### Deployment
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+
+### `npm run build` fails to minify
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
