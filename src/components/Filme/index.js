@@ -13,6 +13,24 @@ export default function Filme(props) {
     props.setFilmes(arrayAlterado);
   }
 
+  function handleCompra() {
+    const carrinho = [...props.sacola];
+    const produto = carrinho.find(item => item.nome === props.titulo);
+    if (produto) {
+      produto.qtd += 1;
+    } else {
+      carrinho.push({
+        nome: props.titulo,
+        valor: props.preco,
+        imagem: props.imagem,
+        qtd: 1,
+      });
+    }
+
+    console.log(carrinho);
+    props.setSacola(carrinho);
+  }
+
   return (
     <div
       className='cardFilme'
@@ -41,9 +59,9 @@ export default function Filme(props) {
             <p>{props.nota}</p>
           </div>
         </div>
-        <div className='precoFilme'>
+        <div onClick={handleCompra} className='precoFilme'>
           <p>Sacola</p>
-          <p>{`R$ ${props.preco}`}</p>
+          <p>{`R$ ${String(props.preco.toFixed(2)).replace(".", ",")}`}</p>
         </div>
       </div>
     </div>

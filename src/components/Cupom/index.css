@@ -5,8 +5,10 @@
   box-sizing: border-box;
   font-family: "Quantico", sans-serif;
   height: 119px;
-  max-width: 936px;
+  width: 100%;
   background-image: url("./bg-promotion.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
   display: flex;
   align-items: center;
   gap: 24px;

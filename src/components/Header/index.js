@@ -8,6 +8,12 @@ export default function Header({ setBusca }) {
     e.target.value = "";
   }
 
+  function handleClickBusca(e) {
+    const inputEl = document.querySelector("#busca");
+    setBusca(inputEl.value);
+    inputEl.value = "";
+  }
+
   return (
     <header className='header'>
       <img src='logo.svg' alt='Logo Cubos Flix' />
@@ -16,8 +22,9 @@ export default function Header({ setBusca }) {
           onKeyPress={e => handleBusca(e)}
           placeholder='Pesquise filmes...'
           type='text'
+          id='busca'
         />
-        <button>
+        <button onClick={e => handleClickBusca(e)}>
           <img src='search-icon.svg' alt='Buscar' />
         </button>
       </div>

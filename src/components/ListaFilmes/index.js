@@ -1,5 +1,5 @@
 import "./index.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Filme from "../Filme";
 
 const filtroInicial = [
@@ -25,10 +25,44 @@ const filtroInicial = [
   },
 ];
 
-export default function ListaFilmes({ filmes, setFilmes, busca }) {
+export default function ListaFilmes({
+  filmes,
+  setFilmes,
+  busca,
+  sacola,
+  setSacola,
+}) {
   const [filtro, setFiltro] = useState(filtroInicial);
+  const [filmesFiltrados, setFilmesFiltrados] = useState(filmes);
+  //console.log(filmesFiltrados);
+  //console.log(filtro);
+  useEffect(() => {
+    console.log("entrou");
+    let novosFilmes = [];
+    const filtroFilmes = [...filmesFiltrados];
+    const filtrosAtivos = filtro.filter(item => item.estado);
+
+    for (const filtroAtual of filtrosAtivos) {
+      for (const filme of filtroFilmes) {
+        /*
+        if (
+          !novosFilmes.includes(filme) &&
+          filme.categories.includes(filtroAtual.nome)
+        ) {
+          novosFilmes.push(filme);
+        }
+        */
+      }
+    }
+
+    if (filtrosAtivos[0].nome === "todos") {
+      novosFilmes = [...filmes];
+    }
+    setFilmesFiltrados(novosFilmes);
+  }, [filtro]);
+
   function handleFiltro(novoFiltro) {
-    const arrayFiltro = filtro;
+    const arrayFiltro = [...filtro];
     switch (novoFiltro) {
       case "todos":
         arrayFiltro[0].estado = true;
@@ -58,7 +92,10 @@ export default function ListaFilmes({ filmes, setFilmes, busca }) {
     }
     if (arrayFiltro.every(item => item.estado === false))
       arrayFiltro[0].estado = true;
-    setFiltro(arrayFiltro);
+
+    //console.log(novosFilmes);
+    //console.log(arrayFiltro);
+    setFiltro([...arrayFiltro]);
   }
 
   return (
@@ -97,41 +134,21 @@ export default function ListaFilmes({ filmes, setFilmes, busca }) {
         </button>
       </div>
       <div className='listaCards'>
-        {filmes.map(item => {
+        {filmesFiltrados.map(item => {
           if ((busca !== "" && item.title.includes(busca)) || busca === "") {
-            if (filtro[0].estado) {
-              return (
-                <Filme
-                  imagem={item.backgroundImg}
-                  preco={item.price}
-                  titulo={item.title}
-                  nota={item.starsCount}
-                  favoritado={item.isStarred}
-                  filmes={filmes}
-                  setFilmes={setFilmes}
-                />
-              );
-            } else {
-              const categorias = item.categories;
-              const filtrosAtivos = filtro.filter(item => item.estado === true);
-              for (let filtroNovo of filtrosAtivos) {
-                if (categorias.includes(filtroNovo.nome)) {
-                  return (
-                    <Filme
-                      imagem={item.backgroundImg}
-                      preco={item.price}
-                      titulo={item.title}
-                      nota={item.starsCount}
-                      favoritado={item.isStarred}
-                      filmes={filmes}
-                      setFilmes={setFilmes}
-                    />
-                  );
-                } else {
-                  return "";
-                }
-              }
-            }
+            return (
+              <Filme
+                imagem={item.backgroundImg}
+                preco={item.price}
+                titulo={item.title}
+                nota={item.starsCount}
+                favoritado={item.isStarred}
+                filmes={filmes}
+                setFilmes={setFilmes}
+                sacola={sacola}
+                setSacola={setSacola}
+              />
+            );
           } else {
             return "";
           }

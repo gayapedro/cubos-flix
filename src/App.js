@@ -12,6 +12,7 @@ function App() {
   const [cupomAplicado, setCupomAplicado] = useState("");
   const [filmes, setFilmes] = useState(Filmes);
   const [busca, setBusca] = useState("");
+  const [sacola, setSacola] = useState([]);
   return (
     <div className='App'>
       <Header setBusca={setBusca} />
@@ -25,9 +26,27 @@ function App() {
       ) : (
         ""
       )}
-      <Sacola />
-      <TopFilmes filmes={filmes} filmes={filmes} setFilmes={setFilmes} />
-      <ListaFilmes filmes={filmes} setFilmes={setFilmes} busca={busca} />
+      <Sacola
+        sacola={sacola}
+        setSacola={setSacola}
+        cupomAplicado={cupomAplicado}
+        setCupomAplicado={setCupomAplicado}
+        timerCupom={timerCupom}
+      />
+      <TopFilmes
+        sacola={sacola}
+        setSacola={setSacola}
+        filmes={filmes}
+        filmes={filmes}
+        setFilmes={setFilmes}
+      />
+      <ListaFilmes
+        sacola={sacola}
+        setSacola={setSacola}
+        filmes={filmes}
+        setFilmes={setFilmes}
+        busca={busca}
+      />
     </div>
   );
 }

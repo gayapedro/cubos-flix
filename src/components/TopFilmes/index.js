@@ -1,7 +1,7 @@
 import "./index.css";
 import Filme from "../Filme";
 
-export default function TopFilmes({ filmes, setFilmes }) {
+export default function TopFilmes({ filmes, setFilmes, sacola, setSacola }) {
   return (
     <div className='topFilmes'>
       <h1>Top Filmes</h1>
@@ -17,6 +17,8 @@ export default function TopFilmes({ filmes, setFilmes }) {
                 favoritado={item.isStarred}
                 filmes={filmes}
                 setFilmes={setFilmes}
+                sacola={sacola}
+                setSacola={setSacola}
               />
             );
           }
