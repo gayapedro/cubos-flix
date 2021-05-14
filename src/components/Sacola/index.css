@@ -1,7 +1,5 @@
 .containerSacola {
   grid-area: sacola;
-  height: 100%;
-  width: 100%;
   font-family: "Manrope", sans-serif;
   position: relative;
   display: flex;
@@ -12,6 +10,7 @@
 aside {
   width: max-content;
   position: fixed;
+  width: 310px;
   top: 128px;
   background-color: rgba(0, 0, 0, 0.2);
 }
@@ -37,6 +36,8 @@ aside main {
   align-items: stretch;
   gap: 10px;
   padding: 20px;
+  max-height: 36.5vh;
+  overflow-y: auto;
 }
 
 aside main h2 {
@@ -50,7 +51,7 @@ aside main h2 {
   margin-top: 20px;
 }
 
-aside main p {
+main p {
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
@@ -72,6 +73,7 @@ aside footer p {
   line-height: 150%;
   color: #fdfdfd;
   text-align: left;
+  margin: 5px 0px;
 }
 
 aside footer .divInputCupom {
