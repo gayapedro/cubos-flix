@@ -48,6 +48,14 @@
   color: #fdfdfd;
 }
 
-.campoDireito img {
+.campoDireito svg {
   cursor: pointer;
+}
+
+.campoDireito svg:hover {
+  background: linear-gradient(
+    0deg,
+    rgba(107, 107, 107, 0.37),
+    rgba(107, 107, 107, 0.37)
+  );
 }
