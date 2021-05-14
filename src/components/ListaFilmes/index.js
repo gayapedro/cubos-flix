@@ -29,6 +29,7 @@ export default function ListaFilmes({
   filmes,
   setFilmes,
   busca,
+  setBusca,
   sacola,
   setSacola,
 }) {
@@ -98,9 +99,25 @@ export default function ListaFilmes({
     setFiltro([...arrayFiltro]);
   }
 
+  function handleClearBusca() {
+    setBusca("");
+  }
+
   return (
     <div className='listaFilmes'>
       <h1>Filmes</h1>
+      {busca !== "" ? (
+        <div className='exibirBusca'>
+          <h2>Filtro:</h2>
+          <div className='nomeBusca'>
+            <p>{busca}</p>
+            <button onClick={handleClearBusca}>&#215;</button>
+          </div>
+        </div>
+      ) : (
+        ""
+      )}
+
       <div className='containerBotoes'>
         <button
           className={filtro[0].estado ? "selecionado" : ""}

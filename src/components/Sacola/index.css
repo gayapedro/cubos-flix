@@ -95,12 +95,11 @@ aside footer .divInputCupom input {
 }
 
 aside footer .divInputCupom input:hover {
-  border: 1px solid #8c8c8c;
+  outline: 1px solid #8c8c8c;
 }
 
 aside footer .divInputCupom input:focus {
-  outline: none;
-  border: 1px solid #fdfdfd;
+  outline: 1px solid #fdfdfd;
 }
 
 aside footer .divInputCupom img {
@@ -123,4 +122,24 @@ aside footer button {
   background-color: rgba(226, 94, 191);
   color: #fdfdfd;
   margin-top: 24px;
+}
+
+aside footer button:hover {
+  background: linear-gradient(
+      0deg,
+      rgba(225, 123, 123, 0.45),
+      rgba(225, 123, 123, 0.45)
+    ),
+    #ffb6eb;
+  box-shadow: 0px 16px 24px -12px rgba(226, 94, 191, 0.16);
+}
+
+aside footer button:active {
+  background: linear-gradient(
+      0deg,
+      rgba(225, 123, 123, 0.6),
+      rgba(225, 123, 123, 0.6)
+    ),
+    #ffb6eb;
+  box-shadow: 0px 16px 24px -12px rgba(226, 94, 191, 0.5);
 }

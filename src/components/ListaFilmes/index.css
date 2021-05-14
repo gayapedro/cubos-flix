@@ -60,3 +60,28 @@
   border-color: #e183c8;
   background-color: rgba(225, 131, 200, 0.2);
 }
+
+.exibirBusca {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 30px;
+  font-family: "Open Sans", sans-serif;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.nomeBusca {
+  display: flex;
+  gap: 10px;
+  font-size: 20px;
+  line-height: 180%;
+  margin-left: 20px;
+  align-items: center;
+}
+
+.nomeBusca button {
+  all: unset;
+  cursor: pointer;
+  font-size: 20px;
+  padding: 10px;
+}

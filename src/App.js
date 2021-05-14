@@ -46,6 +46,7 @@ function App() {
         filmes={filmes}
         setFilmes={setFilmes}
         busca={busca}
+        setBusca={setBusca}
       />
     </div>
   );
