@@ -34,33 +34,18 @@ export default function ListaFilmes({
   setSacola,
 }) {
   const [filtro, setFiltro] = useState(filtroInicial);
-  const [filmesFiltrados, setFilmesFiltrados] = useState(filmes);
-  //console.log(filmesFiltrados);
-  //console.log(filtro);
-  useEffect(() => {
-    console.log("entrou");
-    let novosFilmes = [];
-    const filtroFilmes = [...filmesFiltrados];
+
+  function handleCategoria(filme) {
     const filtrosAtivos = filtro.filter(item => item.estado);
-
-    for (const filtroAtual of filtrosAtivos) {
-      for (const filme of filtroFilmes) {
-        /*
-        if (
-          !novosFilmes.includes(filme) &&
-          filme.categories.includes(filtroAtual.nome)
-        ) {
-          novosFilmes.push(filme);
-        }
-        */
-      }
+    if (filtro[0].estado) {
+      return filme;
     }
-
-    if (filtrosAtivos[0].nome === "todos") {
-      novosFilmes = [...filmes];
+    if (filtrosAtivos.some(item => filme.categories.includes(item.nome))) {
+      return filme;
+    } else {
+      return "";
     }
-    setFilmesFiltrados(novosFilmes);
-  }, [filtro]);
+  }
 
   function handleFiltro(novoFiltro) {
     const arrayFiltro = [...filtro];
@@ -94,8 +79,6 @@ export default function ListaFilmes({
     if (arrayFiltro.every(item => item.estado === false))
       arrayFiltro[0].estado = true;
 
-    //console.log(novosFilmes);
-    //console.log(arrayFiltro);
     setFiltro([...arrayFiltro]);
   }
 
@@ -151,7 +134,7 @@ export default function ListaFilmes({
         </button>
       </div>
       <div className='listaCards'>
-        {filmesFiltrados.map(item => {
+        {filmes.filter(handleCategoria).map(item => {
           if ((busca !== "" && item.title.includes(busca)) || busca === "") {
             return (
               <Filme

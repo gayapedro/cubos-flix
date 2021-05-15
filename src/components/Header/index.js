@@ -3,7 +3,7 @@ import { useState } from "react";
 
 export default function Header({ setBusca }) {
   function handleBusca(e) {
-    if (e.key !== "Enter") return;
+    if (e.key !== "Enter" || e.target.value === "") return;
     setBusca(e.target.value);
     e.target.value = "";
   }

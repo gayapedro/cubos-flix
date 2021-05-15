@@ -45,7 +45,7 @@ export default function Sacola(props) {
           <img src='bag-icon.svg' alt='Sacola' />
           <p>Sacola</p>
         </header>
-        <main>
+        <main className={props.sacola.length === 0 ? "vazio" : "temItem"}>
           {props.sacola.length === 0 ? (
             <div>
               <h2>Sua sacola está vazia</h2>

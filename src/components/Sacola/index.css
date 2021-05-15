@@ -36,7 +36,14 @@ aside main {
   align-items: stretch;
   gap: 10px;
   padding: 20px;
-  max-height: 36.5vh;
+}
+
+.vazio {
+  height: 46.5vh;
+}
+
+.temItem {
+  height: 36.5vh;
   overflow-y: auto;
 }
 
