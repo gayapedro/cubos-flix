@@ -7,7 +7,6 @@ export default function Cupom({
   setCupomAplicado,
   cupomAplicado,
 }) {
-  console.log("oi");
   useEffect(() => {
     const intervalID = setInterval(() => {
       if (timerCupom > 0 && !cupomAplicado) {
