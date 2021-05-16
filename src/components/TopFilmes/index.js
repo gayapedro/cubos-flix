@@ -21,6 +21,8 @@ export default function TopFilmes({ filmes, setFilmes, sacola, setSacola }) {
                 setSacola={setSacola}
               />
             );
+          } else {
+            return "";
           }
         })}
       </div>

@@ -1,5 +1,4 @@
 import "./index.css";
-import { useState } from "react";
 
 export default function Header({ setBusca }) {
   function handleBusca(e) {

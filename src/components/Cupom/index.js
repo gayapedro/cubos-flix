@@ -7,6 +7,7 @@ export default function Cupom({
   setCupomAplicado,
   cupomAplicado,
 }) {
+  console.log("oi");
   useEffect(() => {
     const intervalID = setInterval(() => {
       if (timerCupom > 0 && !cupomAplicado) {
@@ -17,7 +18,7 @@ export default function Cupom({
     return () => {
       clearInterval(intervalID);
     };
-  }, []);
+  }, [timerCupom]);
 
   function handleCupom() {
     const input = document.querySelector("#cupom");

@@ -5,10 +5,10 @@ import Sacola from "./components/Sacola";
 import TopFilmes from "./components/TopFilmes";
 import ListaFilmes from "./components/ListaFilmes";
 import Filmes from "./data";
-import { useRef, useState } from "react";
+import { useState } from "react";
 
 function App() {
-  const [timerCupom, setTimerCupom] = useState(10 * 60);
+  const [timerCupom, setTimerCupom] = useState(5 * 60);
   const [cupomAplicado, setCupomAplicado] = useState("");
   const [filmes, setFilmes] = useState(Filmes);
   const [busca, setBusca] = useState("");
@@ -36,7 +36,6 @@ function App() {
       <TopFilmes
         sacola={sacola}
         setSacola={setSacola}
-        filmes={filmes}
         filmes={filmes}
         setFilmes={setFilmes}
       />
