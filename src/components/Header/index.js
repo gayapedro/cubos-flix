@@ -1,16 +1,17 @@
-import "./index.css";
+import './index.css';
+import profilePic from '../../assets/profilepic.JPG';
 
 export default function Header({ setBusca }) {
   function handleBusca(e) {
-    if (e.key !== "Enter" || e.target.value === "") return;
+    if (e.key !== 'Enter' || e.target.value === '') return;
     setBusca(e.target.value);
-    e.target.value = "";
+    e.target.value = '';
   }
 
   function handleClickBusca(e) {
-    const inputEl = document.querySelector("#busca");
+    const inputEl = document.querySelector('#busca');
     setBusca(inputEl.value);
-    inputEl.value = "";
+    inputEl.value = '';
   }
 
   return (
@@ -18,12 +19,12 @@ export default function Header({ setBusca }) {
       <img src='logo.svg' alt='Logo Cubos Flix' />
       <div className='searchBar'>
         <input
-          onKeyPress={e => handleBusca(e)}
+          onKeyPress={(e) => handleBusca(e)}
           placeholder='Pesquise filmes...'
           type='text'
           id='busca'
         />
-        <button onClick={e => handleClickBusca(e)}>
+        <button onClick={(e) => handleClickBusca(e)}>
           <img src='search-icon.svg' alt='Buscar' />
         </button>
       </div>
@@ -37,7 +38,7 @@ export default function Header({ setBusca }) {
       </a>
       <div className='account'>
         <p>Bem vindo, Pedro</p>
-        <img src='profilepic.jpg' alt='Foto de perfil' />
+        <img src={profilePic} alt='Foto de perfil' />
       </div>
     </header>
   );
